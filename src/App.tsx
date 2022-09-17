@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './App.css'
-import { useAppDispatch, useAppSelector } from './hooks/redux'
-import { fetchUsers } from './store/reducers/ActionCeators'
+// import { useAppDispatch, useAppSelector } from './hooks/redux'
+// import { fetchUsers } from './store/reducers/ActionCeators'
 
 function App() {
 	// const { count } = useAppSelector((state) => state.userReducer)
 	// const { increment } = userSlice.actions
-	const dispatch = useAppDispatch()
-	const { users, isLoading, error } = useAppSelector(
-		(state) => state.userReducer
-	)
-
-	useEffect(() => {
-		dispatch(fetchUsers())
-	}, [])
+	// const dispatch = useAppDispatch()
+	// const { users, isLoading, error } = useAppSelector(
+	// 	(state) => state.userReducer
+	// )
+	//
+	// useEffect(() => {
+	// 	dispatch(fetchUsers())
+	// }, [])
 
 	return (
 		<div className="App">
@@ -21,9 +21,9 @@ function App() {
 			{/*<button onClick={() => dispatch(increment(1))}>*/}
 			{/*	INCREMENT*/}
 			{/*</button>*/}
-			{isLoading && <h1>Loading...</h1>}
-			{error && <h1>{error}</h1>}
-			{JSON.stringify(users, null, 2)}
+			{/*{isLoading && <h1>Loading...</h1>}*/}
+			{/*{error && <h1>{error}</h1>}*/}
+			{/*{JSON.stringify(users, null, 2)}*/}
 		</div>
 	)
 }
