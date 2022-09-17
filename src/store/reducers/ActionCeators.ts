@@ -10,7 +10,7 @@ export const fetchUsers = () => async (dispatch: AppDispatch) => {
 			'https://jsonplaceholder.typicode.com/users'
 		)
 		console.log(response, 'response')
-		const data = response.data
+		const data = await response.data
 		console.log(data, 'data')
 		dispatch(userSlice.actions.userFetchingSuccess(data))
 	} catch (error) {
