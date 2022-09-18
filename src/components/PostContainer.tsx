@@ -7,6 +7,7 @@ const PostContainer = () => {
 	const { data: posts, error, isLoading } = postAPI.useFetchAllPostsQuery(15)
 	const [createPost, {}] = postAPI.useCreatePostMutation()
 	const [updatePost, {}] = postAPI.useUpdatePostMutation()
+	const [deletePost, {}] = postAPI.useDeletePostMutation()
 
 	const handleAddPost = async () => {
 		const title = prompt()
@@ -15,6 +16,10 @@ const PostContainer = () => {
 
 	const handleUpdatePost = (post: IPost) => {
 		updatePost(post)
+	}
+
+	const handleDeletePost = (post: IPost) => {
+		deletePost(post)
 	}
 
 	return (
@@ -29,6 +34,7 @@ const PostContainer = () => {
 							key={post.id}
 							post={post}
 							update={handleUpdatePost}
+							remove={handleDeletePost}
 						/>
 					))}
 			</div>

@@ -15,7 +15,7 @@ export const postAPI = createApi({
 					_limit: limit
 				}
 			}),
-			providesTags: (result) => ['Post']
+			providesTags: () => ['Post']
 		}),
 		createPost: builder.mutation<IPost, IPost>({
 			query: (post) => ({
@@ -30,6 +30,13 @@ export const postAPI = createApi({
 				url: `posts/${post.id}`,
 				method: 'PUT',
 				body: post
+			}),
+			invalidatesTags: ['Post']
+		}),
+		deletePost: builder.mutation<IPost, IPost>({
+			query: (post) => ({
+				url: `posts/${post.id}`,
+				method: 'DELETE'
 			}),
 			invalidatesTags: ['Post']
 		})
