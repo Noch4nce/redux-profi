@@ -19,8 +19,16 @@ export const postAPI = createApi({
 		}),
 		createPost: builder.mutation<IPost, IPost>({
 			query: (post) => ({
-				url: '/posts',
+				url: 'posts',
 				method: 'POST',
+				body: post
+			}),
+			invalidatesTags: ['Post']
+		}),
+		updatePost: builder.mutation<IPost, IPost>({
+			query: (post) => ({
+				url: `posts/${post.id}`,
+				method: 'PUT',
 				body: post
 			}),
 			invalidatesTags: ['Post']
