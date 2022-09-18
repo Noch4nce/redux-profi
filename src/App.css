@@ -1,7 +1,28 @@
 * {
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
 	background-color: #7e7c7c;
+}
+
+.post__list {
+	width: 100%;
+	padding: 20px;
+}
+
+.w100 {
+	width: 100%;
+}
+
+.post {
+	padding: 20px;
+	border: 2px solid teal;
+	margin-top: 15px;
+	width: 300px;
+	display: flex;
+	justify-content: space-between;
+	color: white;
 }

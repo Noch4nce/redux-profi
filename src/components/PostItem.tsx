@@ -8,8 +8,7 @@ interface PostItemProps {
 }
 
 const PostItem: FC<PostItemProps> = ({ post, update }) => {
-	const handleUpdatePost = (event: React.MouseEvent) => {
-		event.stopPropagation()
+	const handleUpdatePost = () => {
 		const title = prompt() || ''
 		update({ ...post, title })
 	}
